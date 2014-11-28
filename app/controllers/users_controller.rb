@@ -8,14 +8,20 @@ class UsersController < ApplicationController
   end
 
   def create
+    # render json: params[:user] and return
     @user = User.new(user_params)
-    @user.save
-    redirect_to user_url(@user), notice: 'User created!'
+    if @user.save
+      do_login(@user)
+      redirect_to user_url(@user), notice: 'User created!'
+    else
+      render :new
+    end
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(
+        :name, :email, :password, :password_confirmation)
     end
 end

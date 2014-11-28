@@ -25,3 +25,4 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 
 gem 'hirb'
+gem 'bcrypt', '~> 3.1.7'
