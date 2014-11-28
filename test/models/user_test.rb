@@ -2,7 +2,9 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    @user = User.new(name: 'fulan', email: 'fulan@gmail.com')
+    @user = User.new(
+      name: 'fulan', email: 'fulan@gmail.com',
+      password: 'password', password_confirmation: 'password')
   end
 
   test "valid if all filled" do
@@ -26,8 +28,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "invalid if email already exist" do
-    User.create(name: 'delta', email: 'd@qiscus.com')
-    @user.email = 'd@qiscus.com'
+    user = @user.dup
+    user.save!
     assert @user.invalid?
   end
 
