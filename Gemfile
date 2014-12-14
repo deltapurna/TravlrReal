@@ -26,3 +26,6 @@ gem 'bootstrap-sass'
 
 gem 'hirb'
 gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem 'byebug'

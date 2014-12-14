@@ -1,0 +1,15 @@
+<h1>List of Users</h1>
+<%= will_paginate @users %>
+<table class="table">
+<% @users.each do |user| %>
+  <tr>
+    <td>
+      <%= link_to user.name, user %>
+    </td>
+    <td>
+      <%= user.email %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @users %>
