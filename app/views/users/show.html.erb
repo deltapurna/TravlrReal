@@ -1,1 +1,18 @@
-<%= @user.name %>, <%= @user.email %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+      <ol class="journals">
+        <% @user.journals.each do |journal| %>
+          <h2><%= journal.title %></h2>
+          <p><%= journal.content %></p>
+        <% end %>
+      </ol>
+  </div>
+</div>
