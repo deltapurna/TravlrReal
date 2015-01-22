@@ -6,7 +6,8 @@ class JournalsController < ApplicationController
       build(journal_params)
     
     if @journal.save
-      render partial: 'journal', locals: { journal: @journal }
+      # render partial: 'journal', locals: { journal: @journal }
+      # redirect_to root_url
     else
       redirect_to root_url, alert: 'Something wrong'
     end
@@ -15,6 +16,6 @@ class JournalsController < ApplicationController
   private
 
   def journal_params
-    params.require(:journal).permit(:title, :content)
+    params.require(:journal).permit(:title, :content, :picture)
   end
 end

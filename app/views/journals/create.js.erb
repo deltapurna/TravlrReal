@@ -1,3 +1,5 @@
-$('.journals').prepend("<%= escape_javascript(render('journals/journal')) %>");
+journals = $('.journals');
+journals.prepend("<%= escape_javascript(render('journals/journal', journal: @journal)) %>");
+journals.children().last().remove();
 $('#journal_title').val('');
 $('#journal_content').val('');

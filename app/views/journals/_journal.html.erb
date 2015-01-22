@@ -6,6 +6,7 @@
     <span class="timestamp">
       Posted <%= time_ago_in_words(journal.created_at) %> ago.
     </span>
+    <%= image_tag journal.picture.url if journal.picture %>
     <pre><%= journal.content %></pre>
   </span>
 </li>

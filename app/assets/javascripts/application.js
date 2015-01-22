@@ -12,16 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
 $(function() {
   $('#new_journal').on('ajax:success', function(e, data){
-    journals = $('.journals');
-    journals.prepend(data);
-    journals.children().last().remove();
-    $('#journal_title').val('');
-    $('#journal_content').val('');
+    // journals = $('.journals');
+    // journals.prepend(data);
+    // journals.children().last().remove();
+    // $('#journal_title').val('');
+    // $('#journal_content').val('');
   });
 });
