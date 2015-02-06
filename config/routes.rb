@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#destroy'
 
   resources :journals, only: [:create]
+  resources :password_resets, only: [:new, :edit, :create, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
